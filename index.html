@@ -2,152 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rebel Plumbing</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOTBOY Delivery</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      background: #f8f8f8;
-      color: #080808;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff9df;
+      color: #090909;
       overflow-x: hidden;
     }
 
     .page {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 15% 10%, rgba(40,124,201,.12), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(0,0,0,.08), transparent 25%),
-        #fff;
+        radial-gradient(circle at 12% 10%, rgba(255, 204, 0, .28), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(239, 38, 38, .12), transparent 22%),
+        linear-gradient(180deg, #fffdf1 0%, #fff7c7 100%);
     }
 
     header {
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 24px 0;
+      padding: 22px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 6px solid #050505;
+      border-bottom: 7px solid #0b0b0b;
     }
 
     .brand {
-      font-size: clamp(26px, 4vw, 48px);
-      color: #2174bd;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: clamp(30px, 5vw, 58px);
+      letter-spacing: -1px;
+      color: #ffcf00;
       text-transform: uppercase;
-      text-shadow: 3px 3px 0 #000;
-      -webkit-text-stroke: 1px #000;
+      -webkit-text-stroke: 2px #0b0b0b;
+      text-shadow: 4px 4px 0 #ef2626;
     }
 
     nav {
       display: flex;
       gap: 18px;
-      font-family: Arial, sans-serif;
-      font-weight: 900;
+      flex-wrap: wrap;
+      font-weight: 1000;
       text-transform: uppercase;
       font-size: 13px;
+      letter-spacing: .08em;
     }
 
     nav a {
+      color: #0b0b0b;
       text-decoration: none;
-      color: #080808;
     }
 
     .hero {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 54px 0 42px;
       text-align: center;
-      padding: 60px 16px;
     }
 
     .logo-wrap {
-      width: min(520px, 90vw);
-      margin: 0 auto 20px;
+      width: min(560px, 94vw);
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
     }
 
     .logo-wrap img {
       width: 100%;
-      filter: drop-shadow(0 14px 0 rgba(0,0,0,.15));
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 16px 0 rgba(0,0,0,.13));
+    }
+
+    .tag {
+      display: inline-block;
+      background: #0b0b0b;
+      color: #ffcf00;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 0 #ef2626;
     }
 
     h1 {
-      font-size: clamp(54px, 10vw, 130px);
-      color: #2174bd;
-      text-shadow: 6px 6px 0 #000;
-      -webkit-text-stroke: 2px #000;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(58px, 12vw, 148px);
+      line-height: .82;
       text-transform: uppercase;
-      line-height: .85;
+      letter-spacing: -4px;
+      color: #ffcf00;
+      -webkit-text-stroke: 3px #0b0b0b;
+      text-shadow: 7px 7px 0 #ef2626;
     }
 
     .subhead {
-      font-family: Arial, sans-serif;
-      margin-top: 20px;
-      font-weight: 800;
-      max-width: 600px;
-      margin-inline: auto;
+      max-width: 720px;
+      margin: 28px auto 0;
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .cta-row {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
-      margin-top: 25px;
-      display: inline-block;
-      border: 5px solid #000;
-      background: #2174bd;
-      color: #fff;
-      padding: 16px 24px;
-      font-family: Arial;
-      font-weight: 900;
+      border: 5px solid #0b0b0b;
+      border-radius: 999px;
+      background: #ffcf00;
+      color: #0b0b0b;
+      padding: 16px 28px;
+      min-width: 190px;
+      font-size: 15px;
+      font-weight: 1000;
       text-transform: uppercase;
       text-decoration: none;
-      box-shadow: 6px 6px 0 #000;
-      transform: skew(-8deg);
+      box-shadow: 7px 7px 0 #0b0b0b;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 4px 4px 0 #0b0b0b;
+    }
+
+    .btn.red {
+      background: #ef2626;
+      color: #fff;
     }
 
     .reviews {
-      background: #000;
-      color: #fff;
+      border-top: 7px solid #0b0b0b;
+      border-bottom: 7px solid #0b0b0b;
+      background: #0b0b0b;
       overflow: hidden;
-      padding: 20px 0;
-      margin-top: 40px;
+      padding: 22px 0;
+      margin-top: 38px;
     }
 
     .review-track {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       width: max-content;
-      animation: scroll 40s linear infinite;
+      animation: scrollReviews 48s linear infinite;
     }
 
     .review {
+      width: 365px;
       background: #fff;
-      color: #000;
-      padding: 16px;
-      border: 4px solid #2174bd;
-      width: 300px;
-      font-family: Arial;
-      font-weight: 800;
-      box-shadow: 6px 6px 0 #2174bd;
+      border: 5px solid #ffcf00;
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: 8px 8px 0 #ef2626;
+      font-weight: 900;
     }
 
     .stars {
-      color: #2174bd;
-      font-size: 20px;
+      color: #ffcf00;
+      -webkit-text-stroke: 1px #0b0b0b;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
-    @keyframes scroll {
+    .review p {
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .review strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #ef2626;
+    }
+
+    @keyframes scrollReviews {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
 
     section {
-      padding: 60px 16px;
-      max-width: 1100px;
-      margin: auto;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0;
     }
 
     .section-title {
-      font-size: 60px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: clamp(46px, 9vw, 96px);
+      line-height: .88;
       text-transform: uppercase;
+      color: #0b0b0b;
       margin-bottom: 30px;
+      letter-spacing: -2px;
     }
 
     .services-grid {
@@ -156,94 +219,126 @@
       gap: 20px;
     }
 
-    .service {
-      border: 5px solid #000;
-      padding: 20px;
+    .service-card {
+      min-height: 205px;
+      padding: 25px;
+      border: 6px solid #0b0b0b;
+      border-radius: 30px;
       background: #fff;
-      box-shadow: 6px 6px 0 #2174bd;
+      box-shadow: 10px 10px 0 #ffcf00;
     }
 
-    .service h3 {
-      color: #2174bd;
-      font-size: 24px;
-      margin-bottom: 10px;
+    .service-card h3 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 32px;
+      line-height: .95;
+      text-transform: uppercase;
+      color: #ffcf00;
+      -webkit-text-stroke: 1.5px #0b0b0b;
+      text-shadow: 2px 2px 0 #ef2626;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .banner {
+      background: #ef2626;
+      color: #fff;
+      border-top: 8px solid #0b0b0b;
+      border-bottom: 8px solid #0b0b0b;
+      padding: 46px 16px;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: clamp(44px, 9vw, 106px);
+      line-height: .85;
+      -webkit-text-stroke: 2px #0b0b0b;
+      text-shadow: 6px 6px 0 #0b0b0b;
     }
 
     footer {
-      background: #000;
+      background: #0b0b0b;
       color: #fff;
+      padding: 36px 16px;
       text-align: center;
-      padding: 30px;
-      font-family: Arial;
-      font-weight: 900;
+      font-weight: 1000;
       text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
-    @media (max-width: 800px) {
-      .services-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 860px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
       }
+
+      h1 { letter-spacing: -2px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .review { width: 300px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="page">
-
+  <main class="page">
     <header>
-      <div class="brand">Rebel Plumbing</div>
+      <div class="brand">BOTBOY Delivery</div>
       <nav>
         <a href="#services">Services</a>
         <a href="#reviews">Reviews</a>
-        <a href="tel:5555555555">Call</a>
+        <a href="#order">Order</a>
       </nav>
     </header>
 
-    <div class="hero">
+    <section class="hero" id="order">
       <div class="logo-wrap">
-        <img src="https://nukesfall.github.io/photodump/image.png" />
+        <img src="/mnt/data/a_clean_vector_logo_illustration_on_a_white_backgr.png" alt="BOTBOY Delivery logo" />
       </div>
-
-      <h1>Plumbing with attitude</h1>
-      <p class="subhead">
-        Fast, clean, no-BS plumbing. We show up, fix it right, and leave it better than we found it.
-      </p>
-
-      <a class="btn" href="tel:5555555555">Call Now</a>
-    </div>
+      <div class="tag">Fast • Friendly • Robotic</div>
+      <h1>Delivery at bot speed.</h1>
+      <p class="subhead">BOTBOY Delivery brings food, groceries, drinks, essentials, and small local orders straight to your door with bright energy and no drama.</p>
+      <div class="cta-row">
+        <a class="btn red" href="#services">Start a Delivery</a>
+        <a class="btn" href="tel:5555555555">Call BOTBOY</a>
+      </div>
+    </section>
 
     <div class="reviews" id="reviews">
       <div class="review-track">
-        <div class="review"><div class="stars">★★★★★</div>Fast, honest, and clean work. — Mike</div>
-        <div class="review"><div class="stars">★★★★★</div>Fixed my leak in 30 mins. — Sarah</div>
-        <div class="review"><div class="stars">★★★★★</div>Best plumber I’ve hired. — Josh</div>
-        <div class="review"><div class="stars">★★★★★</div>No upsells, just results. — Tina</div>
-
-        <!-- duplicate for seamless scroll -->
-        <div class="review"><div class="stars">★★★★★</div>Fast, honest, and clean work. — Mike</div>
-        <div class="review"><div class="stars">★★★★★</div>Fixed my leak in 30 mins. — Sarah</div>
-        <div class="review"><div class="stars">★★★★★</div>Best plumber I’ve hired. — Josh</div>
-        <div class="review"><div class="stars">★★★★★</div>No upsells, just results. — Tina</div>
+        <div class="review"><div class="stars">★★★★★</div><p>My food showed up hot, fast, and exactly right. The whole brand feels super fun.</p><strong>— Mia R.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Used BOTBOY for lunch at work and it arrived quicker than expected. Easy win.</p><strong>— Jordan P.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Groceries, snacks, and drinks all came in one clean drop-off. Loved it.</p><strong>— Casey M.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Way cooler than normal delivery apps. Fast, simple, and the updates were clear.</p><strong>— Tasha L.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Ordered late and BOTBOY still came through. New favorite delivery option.</p><strong>— Devin K.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>My food showed up hot, fast, and exactly right. The whole brand feels super fun.</p><strong>— Mia R.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Used BOTBOY for lunch at work and it arrived quicker than expected. Easy win.</p><strong>— Jordan P.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Groceries, snacks, and drinks all came in one clean drop-off. Loved it.</p><strong>— Casey M.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Way cooler than normal delivery apps. Fast, simple, and the updates were clear.</p><strong>— Tasha L.</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>Ordered late and BOTBOY still came through. New favorite delivery option.</p><strong>— Devin K.</strong></div>
       </div>
     </div>
 
     <section id="services">
-      <h2 class="section-title">Services</h2>
-
+      <h2 class="section-title">What BOTBOY delivers.</h2>
       <div class="services-grid">
-        <div class="service"><h3>Emergency Repairs</h3><p>Burst pipes, leaks, urgent fixes.</p></div>
-        <div class="service"><h3>Drain Cleaning</h3><p>Clogs, backups, slow drains.</p></div>
-        <div class="service"><h3>Water Heaters</h3><p>Install, repair, replacement.</p></div>
-        <div class="service"><h3>Leak Detection</h3><p>Find hidden issues fast.</p></div>
-        <div class="service"><h3>Toilets & Faucets</h3><p>Install and repairs.</p></div>
-        <div class="service"><h3>Repiping</h3><p>Full system upgrades.</p></div>
+        <div class="service-card"><h3>Restaurant Runs</h3><p>Hot meals, fast lunches, dinner orders, coffee runs, and late-night cravings.</p></div>
+        <div class="service-card"><h3>Grocery Drops</h3><p>Essentials, snacks, drinks, produce, pantry items, and quick store pickups.</p></div>
+        <div class="service-card"><h3>Local Errands</h3><p>Small item pickup, pharmacy runs, forgotten supplies, and same-day local drops.</p></div>
+        <div class="service-card"><h3>Office Orders</h3><p>Team lunches, meeting snacks, coffee runs, and scheduled workplace deliveries.</p></div>
+        <div class="service-card"><h3>Party Fuel</h3><p>Chips, soda, ice, desserts, party snacks, and last-minute gathering supplies.</p></div>
+        <div class="service-card"><h3>Express Mode</h3><p>Priority delivery for orders that need to move fast and arrive clean.</p></div>
       </div>
     </section>
 
-    <footer>
-      © 2026 Rebel Plumbing • Built Different
-    </footer>
+    <div class="banner">Food. Groceries. Essentials. Go.</div>
 
-  </div>
+    <footer>
+      © 2026 BOTBOY Delivery • Built for fast local drops
+    </footer>
+  </main>
 </body>
 </html>
